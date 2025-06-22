@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/verificationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verification"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="50dp"/>
+
+        <TextView
+            android:id="@+id/verificationSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter the code sent to the email you entered"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verification code:"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="4dp"
+            android:layout_gravity="start"/>
+
+        <EditText
+            android:id="@+id/verificationCodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_outline"
+            android:padding="10dp"
+            android:layout_marginBottom="40dp"
+            android:inputType="number"/>
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:backgroundTint="#64B5F6"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+</ScrollView>

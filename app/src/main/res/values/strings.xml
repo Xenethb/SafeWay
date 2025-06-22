@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SafeWay</string>
+    <string name="hello_text">Hello</string>
+    <string name="welcome_message">Welcome to Safeway, where your safety is</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="logo_description">Safeway App Logo</string>
+
+
+</resources>

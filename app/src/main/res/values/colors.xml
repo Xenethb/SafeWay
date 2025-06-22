@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Existing colors -->
+    <color name="your_border_color">#FFFFFFFF</color> <!-- white -->
+    <!-- or any color like -->
+    <color name="border_blue">#3B8FC1</color>
+</resources>
