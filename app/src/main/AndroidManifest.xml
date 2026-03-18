@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.s23010602.safeway">
 
+    <!-- Standard Permissions -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- CRITICAL for "Real" Safety Apps: Allows tracking when screen is off -->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Storage Permissions -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!-- Background Logic Permissions -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Android 14+ Specific Foreground Types -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -16,48 +45,82 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SafeWay"
-        tools:targetApi="31">
+        android:theme="@style/Theme.SafeWay">
+
+        <!-- Launcher Activity -->
         <activity
-            android:name=".SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AlertHistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ManageActivationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SearchActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MapActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".VerificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CreateAccountActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Authentication & User Profile Activities -->
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".CreateAccountActivity" android:exported="false" />
+        <activity android:name=".MyProfileActivity" android:exported="false" />
+        <activity android:name=".EditProfileActivity" android:exported="false" />
+        <activity android:name=".ChangePasswordActivity" android:exported="false" />
+        <activity android:name=".OtherUserActivity" android:exported="false" />
+
+        <!-- Core Features Activities -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MapActivity" android:exported="false" />
+        <activity android:name=".SearchActivity" android:exported="false" />
+        <activity android:name=".ManageActivationActivity" android:exported="false" />
+        <activity android:name=".AlertHistoryActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
+        <activity android:name=".FriendsActivity" android:exported="false" />
+        <activity android:name=".CameraActivity" android:exported="false" />
+        <activity android:name=".SosAlertsActivity" android:exported="false" />
+
+        <!-- Services (The Engine) -->
+        <service
+        android:name=".SosMonitorService"
+        android:foregroundServiceType="dataSync"
+        android:enabled="true"
+        android:exported="false" />
+
+        <service
+            android:name=".QuickSosService"
+            android:exported="false"
+            android:foregroundServiceType="location|microphone" />
+
+        <!-- Updated for Android 14 Compliance -->
+        <service
+            android:name=".LiveLocationService"
+            android:foregroundServiceType="location"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- Receivers -->
+        <receiver android:name=".ActivationReceiver" android:exported="false" />
+        <receiver android:name=".StopReceiver" android:exported="false" />
+        <receiver android:name=".LocationSchedulerReceiver" android:exported="false" />
+        <receiver android:name=".SosNotificationReceiver" android:exported="false" />
+
+        <!-- Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDRh__p3AE30s0woIkqGUV4dYHI5JMh7Ew" />
+            android:value="@string/google_maps_key" />
+
+        <!-- FileProvider for sharing media/logs safely -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
     </application>
 
 </manifest>

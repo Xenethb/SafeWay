@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialogRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#B71C1C"
+    android:padding="24dp">
+
+    <!-- Title -->
+
+    <!-- Message -->
+
+    <!-- Countdown Text -->
+
+    <!-- Cancel Button -->
+
+    <TextView
+        android:id="@+id/tvSosTitle"
+        android:layout_width="321dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="156dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:letterSpacing="0.05"
+        android:text="!!! SOS Countdown !!!"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSosMessage"
+        android:layout_width="327dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Sending SOS in 10 seconds..."
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSosTitle" />
+
+    <TextView
+        android:id="@+id/tvCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="10"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSosMessage" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="267dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="@android:color/white"
+        android:elevation="4dp"
+        android:text="Cancel SOS"
+        android:textColor="#B71C1C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCountdown"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

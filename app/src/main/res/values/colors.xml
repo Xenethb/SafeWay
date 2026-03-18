@@ -1,7 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Existing colors -->
-    <color name="your_border_color">#FFFFFFFF</color> <!-- white -->
-    <!-- or any color like -->
+    <!-- Brand colors -->
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <!-- App custom colors -->
     <color name="border_blue">#3B8FC1</color>
+    <color name="your_border_color">#FFFFFFFF</color> <!-- white -->
+    <color name="gray">#6E6E6E</color>
+    <color name="dark_gray">#333333</color> <!-- made darker for better contrast -->
+    <color name="red">#D32F2F</color> <!-- Material Red 700 -->
+    <color name="green">#00C853</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- New accessibility-safe colors -->
+    <color name="nav_background">#002147</color> <!-- dark blue for bottom nav -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
 </resources>
+

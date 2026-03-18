@@ -1,219 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ManageActivationActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
+    <!-- Title Bar -->
+    <TextView
+        android:id="@+id/title_manage_activation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:text="Manage Activation"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manage Activation"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="16dp" />
-
-        <Button
-            android:id="@+id/btn_enable_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enable Live Location Now"
-            android:backgroundTint="@null"
-            android:textColor="@android:color/white"
-            android:padding="12dp"
-            android:elevation="4dp" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:elevation="4dp"
-            android:padding="12dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Set the usual basic Date and Time to enable Location sharing"
-                        android:textSize="14sp"
-                        android:layout_weight="1" />
-
-                    <Switch
-                        android:id="@+id/switch_enable_time"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:columnCount="7"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp">
-
-                    <Button android:text="Sa" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <Button android:text="Su" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <Button android:text="Mo" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <Button android:text="Tu" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <Button android:text="We" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <Button android:text="Th" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <Button android:text="Fr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                </GridLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
-
-                    <TextView
-                        android:text="From:"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp" />
-
-                    <EditText
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:hint="00"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:hint="00"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="AM"
-                        android:inputType="text" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="4dp">
-
-                    <TextView
-                        android:text="To:"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp" />
-
-                    <EditText
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:hint="00"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:hint="00"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="AM"
-                        android:inputType="text" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:elevation="4dp"
-            android:padding="12dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select the quick method to activate alert"
-                    android:textSize="14sp"
-                    android:layout_marginBottom="8dp" />
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/rb_vigorous_shake"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Vigorous Shake" />
-
-                    <RadioButton
-                        android:id="@+id/rb_shake_volume"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Shake + Volume UP button" />
-
-                    <RadioButton
-                        android:id="@+id/rb_notification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Through Notification" />
-                </RadioGroup>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="This will only work if the Usual Basic Date and Time is enabled"
-                    android:textColor="@android:color/holo_red_dark"
-                    android:textSize="12sp"
-                    android:layout_marginTop="4dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+    <!-- Content Scroll -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="left"
-            android:layout_marginTop="16dp">
+            android:orientation="vertical">
 
+            <!-- Enable Location -->
+            <Button
+                android:id="@+id/btn_enable_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable Live Location Now"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/purple_500" />
+
+            <!-- Day Selection -->
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Active Days:"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button android:id="@+id/btn_Sa" style="@style/DayButton" android:text="Sa"/>
+                <Button android:id="@+id/btn_Su" style="@style/DayButton" android:text="Su"/>
+                <Button android:id="@+id/btn_Mo" style="@style/DayButton" android:text="Mo"/>
+                <Button android:id="@+id/btn_Tu" style="@style/DayButton" android:text="Tu"/>
+                <Button android:id="@+id/btn_We" style="@style/DayButton" android:text="We"/>
+                <Button android:id="@+id/btn_Th" style="@style/DayButton" android:text="Th"/>
+                <Button android:id="@+id/btn_Fr" style="@style/DayButton" android:text="Fr"/>
+            </LinearLayout>
+
+            <!-- Time Activation -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_enable_time"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable Time-based Activation" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/spinner_from_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_from_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_from_ampm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Duration -->
+            <TextView
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration:" />
+
+            <Spinner
+                android:id="@+id/spinner_duration_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <!-- Separator Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Quick Activation -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quick SOS in Notification Bar"
-                android:textSize="14sp" />
+                android:text="Quick Alert Activation Method"
+                android:textStyle="bold" />
 
-            <Switch
-                android:id="@+id/switch_quick_sos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/trigger_method_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/radio_shake"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vigorous Shake" />
+
+                <RadioButton
+                    android:id="@+id/radio_shake_volume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shake + Volume Up" />
+
+                <RadioButton
+                    android:id="@+id/radio_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tap Notification" />
+            </RadioGroup>
+
+            <!-- Footer Note -->
+            <TextView
+                android:id="@+id/footer_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This will only work if the usual basic date and time is enabled."
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="12sp"
+                android:layout_marginTop="24dp"
+                android:gravity="center"/>
+
         </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

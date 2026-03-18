@@ -2,9 +2,87 @@
     <string name="app_name">SafeWay</string>
     <string name="hello_text">Hello</string>
     <string name="welcome_message">Welcome to Safeway, where your safety is</string>
+
+    <!-- Auth -->
     <string name="login">Login</string>
     <string name="sign_up">Sign Up</string>
+
+    <!-- Descriptions for accessibility -->
     <string name="logo_description">Safeway App Logo</string>
+    <string name="desc_user_profile">User Profile Picture</string>
+    <string name="desc_search">Search</string>
+    <string name="desc_sos_alerts">SOS Alerts</string>
+    <string name="desc_map">Map</string>
+    <string name="desc_settings">Settings</string>
+    <string name="desc_friends">Friends</string>
+    <string name="desc_history">History</string>
+
+    <!-- Buttons -->
+    <string name="btn_manage">Manage Activation</string>
+    <string name="btn_sos">SOS</string>
+
+    <!-- Duration for Time-Based Activation -->
+    <string-array name="hours_array">
+        <item>1 Hour</item>
+        <item>2 Hours</item>
+        <item>3 Hours</item>
+        <item>4 Hours</item>
+        <item>5 Hours</item>
+        <item>6 Hours</item>
+        <item>12 Hours</item>
+        <item>24 Hours</item>
+    </string-array>
+
+    <!-- Spinner: Hour selection (12-hour format) -->
+    <string-array name="hours_12_array">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <!-- Spinner: Minutes -->
+    <string-array name="minutes_array">
+        <item>00</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+    </string-array>
+
+    <!-- Spinner: AM/PM -->
+    <string-array name="ampm_array">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
 
 
+    <string name="sos_sent_by_you">Sent by You</string>
+    <string name="sos_alert_from">Alert from %1$s</string>
+    <string name="sos_location_format">Lat: %1$.4f | Lng: %2$.4f</string>
+    <string name="sos_no_gps">No GPS Data Available</string>
+
+
+    <string name="map_unknown_user">Unknown user</string>
+    <string name="map_last_updated">last updated %1$d min ago</string>
+    <string name="map_alert_location">Alert Location</string>
+    <string name="map_not_signed_in">Not signed in</string>
+    <string name="map_perm_denied">Location permission denied.</string>
+
+    <string name="cam_cancel">Cancel</string>
+    <string name="cam_stop_save">Stop &amp; Save</string>
+    <string name="cam_canceled">Recording canceled</string>
+    <string name="cam_saved">Recording saved and logged</string>
+    <string name="cam_perm_required">Permissions are required to use SOS features.</string>
+
+    <string name="history_delete_count">Delete (%1$d)</string>
+
+    <string name="search_no_results">No users found</string>
 </resources>
